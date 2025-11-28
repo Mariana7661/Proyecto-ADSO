@@ -1,12 +1,5 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Servicio.aspx.cs" Inherits="Proyecto_ADSO.Vista.Servicio" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CRUD Servicios</title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<%@ Page Title="Servicios" Language="C#" MasterPageFile="~/Vista/Site.Master" AutoEventWireup="true" CodeBehind="Servicio.aspx.cs" Inherits="Proyecto_ADSO.Vista.Servicio" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <div>
             <h2>Crear Servicio</h2>
             <asp:Label ID="Label1" runat="server" Text="Servicio"></asp:Label>
@@ -25,17 +18,41 @@
             <asp:Label ID="lblCrear" runat="server"></asp:Label>
             <hr />
             <h2>Listado</h2>
-            <asp:GridView ID="gvServicios" runat="server"></asp:GridView>
+            <asp:GridView ID="gvServicios" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="10" OnPageIndexChanging="gvServicios_PageIndexChanging">
+                <Columns>
+                    <asp:BoundField DataField="idServicio" HeaderText="ID" ReadOnly="True" />
+                    <asp:BoundField DataField="servicio" HeaderText="Servicio" />
+                    <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
+                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                </Columns>
+            </asp:GridView>
             <asp:Button ID="btnListar" runat="server" Text="Actualizar Lista" OnClick="btnListar_Click" />
             <h3>Buscar por nombre</h3>
             <asp:TextBox ID="txtBuscarServicio" runat="server" Placeholder="Servicio"></asp:TextBox>
             <asp:Button ID="btnBuscarServicio" runat="server" Text="Buscar" OnClick="btnBuscarServicio_Click" />
-            <asp:GridView ID="gvBusquedaServicios" runat="server"></asp:GridView>
+            <asp:GridView ID="gvBusquedaServicios" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="10" OnPageIndexChanging="gvBusquedaServicios_PageIndexChanging">
+                <Columns>
+                    <asp:BoundField DataField="idServicio" HeaderText="ID" ReadOnly="True" />
+                    <asp:BoundField DataField="servicio" HeaderText="Servicio" />
+                    <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
+                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                </Columns>
+            </asp:GridView>
             <hr />
             <h2>Obtener por ID</h2>
             <asp:TextBox ID="txtIdServicioGet" runat="server" Placeholder="Id Servicio"></asp:TextBox>
             <asp:Button ID="btnObtener" runat="server" Text="Obtener" OnClick="btnObtener_Click" />
-            <asp:GridView ID="gvServicio" runat="server"></asp:GridView>
+            <asp:GridView ID="gvServicio" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="idServicio" HeaderText="ID" ReadOnly="True" />
+                    <asp:BoundField DataField="servicio" HeaderText="Servicio" />
+                    <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
+                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                </Columns>
+            </asp:GridView>
             <hr />
             <h2>Actualizar</h2>
             <asp:TextBox ID="txtIdServicioUp" runat="server" Placeholder="Id Servicio"></asp:TextBox>
@@ -51,6 +68,4 @@
             <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
             <asp:Label ID="lblEliminar" runat="server"></asp:Label>
         </div>
-    </form>
-    </body>
-    </html>
+</asp:Content>

@@ -80,5 +80,19 @@ namespace Proyecto_ADSO.Vista
             gvBusquedaServicios.DataSource = d.BuscarServiciosPorNombre(txtBuscarServicio.Text);
             gvBusquedaServicios.DataBind();
         }
+
+        protected void gvServicios_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {
+            gvServicios.PageIndex = e.NewPageIndex;
+            CargarLista();
+        }
+
+        protected void gvBusquedaServicios_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {
+            gvBusquedaServicios.PageIndex = e.NewPageIndex;
+            var d = new ClServicioD();
+            gvBusquedaServicios.DataSource = d.BuscarServiciosPorNombre(txtBuscarServicio.Text);
+            gvBusquedaServicios.DataBind();
+        }
     }
 }

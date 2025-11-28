@@ -1,0 +1,32 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Proyecto_ADSO.Vista.Site" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fashion Colors</title>
+    <style>
+        body { margin:0; font-family: Arial, sans-serif; background: #fdeef5; }
+        .navbar { display:flex; justify-content:space-between; align-items:center; padding:12px 20px; background:#111; color:#fff; position:sticky; top:0; }
+        .navbar a { color:#fff; text-decoration:none; margin:0 10px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar">
+            <div><strong>Fashion Colors</strong></div>
+            <div>
+                <a href="WebForm1.aspx#acerca">Acerca de nosotros</a>
+                <a href="WebForm1.aspx#contactos">Contactos</a>
+                <a href="CatalogoProductos.aspx">Productos</a>
+                <a href="LoginCliente.aspx">Citas</a>
+                <a href="LoginCliente.aspx">Iniciar sesión</a>
+            </div>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

@@ -12,7 +12,14 @@ namespace Proyecto_ADSO.Vista
             if (!Page.IsValid) return;
             var l = new ClClienteL();
             var ok = l.MtVerificarLogin(txtCorreo.Text, txtClave.Text);
-            lblMsg.Text = ok ? "Ingreso exitoso" : "Correo o clave incorrectos";
+            if (ok)
+            {
+                Response.Redirect("Cita.aspx");
+            }
+            else
+            {
+                lblMsg.Text = "Correo o clave incorrectos";
+            }
         }
     }
 }

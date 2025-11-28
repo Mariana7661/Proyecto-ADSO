@@ -1,12 +1,5 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Producto.aspx.cs" Inherits="Proyecto_ADSO.Vista.Producto" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CRUD Productos</title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<%@ Page Title="Productos" Language="C#" MasterPageFile="~/Vista/Site.Master" AutoEventWireup="true" CodeBehind="Producto.aspx.cs" Inherits="Proyecto_ADSO.Vista.Producto" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <div>
             <h2>Crear Producto</h2>
             <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
@@ -25,17 +18,41 @@
             <asp:Label ID="lblCrear" runat="server"></asp:Label>
             <hr />
             <h2>Listado</h2>
-            <asp:GridView ID="gvProductos" runat="server"></asp:GridView>
+            <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="10" OnPageIndexChanging="gvProductos_PageIndexChanging">
+                <Columns>
+                    <asp:BoundField DataField="idProducto" HeaderText="ID" ReadOnly="True" />
+                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
+                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                </Columns>
+            </asp:GridView>
             <h3>Buscar por nombre</h3>
             <asp:TextBox ID="txtBuscarProducto" runat="server" Placeholder="Nombre"></asp:TextBox>
             <asp:Button ID="btnBuscarProducto" runat="server" Text="Buscar" OnClick="btnBuscarProducto_Click" />
-            <asp:GridView ID="gvBusquedaProductos" runat="server"></asp:GridView>
+            <asp:GridView ID="gvBusquedaProductos" runat="server" AutoGenerateColumns="False" AllowPaging="true" PageSize="10" OnPageIndexChanging="gvBusquedaProductos_PageIndexChanging">
+                <Columns>
+                    <asp:BoundField DataField="idProducto" HeaderText="ID" ReadOnly="True" />
+                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
+                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                </Columns>
+            </asp:GridView>
             <asp:Button ID="btnListar" runat="server" Text="Actualizar Lista" OnClick="btnListar_Click" />
             <hr />
             <h2>Obtener por ID</h2>
             <asp:TextBox ID="txtIdProductoGet" runat="server" Placeholder="Id Producto"></asp:TextBox>
             <asp:Button ID="btnObtener" runat="server" Text="Obtener" OnClick="btnObtener_Click" />
-            <asp:GridView ID="gvProducto" runat="server"></asp:GridView>
+            <asp:GridView ID="gvProducto" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="idProducto" HeaderText="ID" ReadOnly="True" />
+                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
+                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                </Columns>
+            </asp:GridView>
             <hr />
             <h2>Actualizar</h2>
             <asp:TextBox ID="txtIdProductoUp" runat="server" Placeholder="Id Producto"></asp:TextBox>
@@ -51,6 +68,4 @@
             <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
             <asp:Label ID="lblEliminar" runat="server"></asp:Label>
         </div>
-    </form>
-    </body>
-    </html>
+</asp:Content>

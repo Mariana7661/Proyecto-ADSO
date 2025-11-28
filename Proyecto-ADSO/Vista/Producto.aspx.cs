@@ -80,5 +80,19 @@ namespace Proyecto_ADSO.Vista
             gvBusquedaProductos.DataSource = d.BuscarProductosPorNombre(txtBuscarProducto.Text);
             gvBusquedaProductos.DataBind();
         }
+
+        protected void gvProductos_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {
+            gvProductos.PageIndex = e.NewPageIndex;
+            CargarLista();
+        }
+
+        protected void gvBusquedaProductos_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {
+            gvBusquedaProductos.PageIndex = e.NewPageIndex;
+            var d = new ClProductoD();
+            gvBusquedaProductos.DataSource = d.BuscarProductosPorNombre(txtBuscarProducto.Text);
+            gvBusquedaProductos.DataBind();
+        }
     }
 }

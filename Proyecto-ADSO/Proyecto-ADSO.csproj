@@ -67,13 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Vista\img\fashion colors.jpg" />
+    <Content Include="Vista\img\Peluquera.png" />
     <Content Include="Vista\WebForm1.aspx" />
+    <Content Include="Vista\Site.Master" />
     <Content Include="Vista\Cliente.aspx" />
     <Content Include="Vista\Producto.aspx" />
     <Content Include="Vista\Servicio.aspx" />
     <Content Include="Vista\LoginCliente.aspx" />
     <Content Include="Vista\LoginAdmin.aspx" />
     <Content Include="Vista\Cita.aspx" />
+    <Content Include="Vista\CatalogoProductos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +95,7 @@
     <Compile Include="Modelo\ClCliente.cs" />
     <Compile Include="Modelo\ClProducto.cs" />
     <Compile Include="Modelo\ClServicio.cs" />
+    <Compile Include="Modelo\ClAdmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -134,12 +139,23 @@
     <Compile Include="Vista\LoginAdmin.aspx.designer.cs">
       <DependentUpon>LoginAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Vista\Cita.aspx.cs">
       <DependentUpon>Cita.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\Cita.aspx.designer.cs">
       <DependentUpon>Cita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CatalogoProductos.aspx.cs">
+      <DependentUpon>CatalogoProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CatalogoProductos.aspx.designer.cs">
+      <DependentUpon>CatalogoProductos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -151,9 +167,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vista\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <generado automáticamente>
 //     Este código fue generado por una herramienta.
 //
@@ -22,5 +22,11 @@ namespace Proyecto_ADSO.Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        protected global::System.Web.UI.WebControls.Image imgAdmin;
+        protected global::System.Web.UI.WebControls.Label lblAdminNombre;
+        protected global::System.Web.UI.WebControls.Label lblAdminApellido;
+        protected global::System.Web.UI.WebControls.Label lblAdminCelular;
+        protected global::System.Web.UI.WebControls.HyperLink lnkContactar;
     }
 }

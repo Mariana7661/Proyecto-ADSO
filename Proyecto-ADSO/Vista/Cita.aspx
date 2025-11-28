@@ -1,18 +1,9 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cita.aspx.cs" Inherits="Proyecto_ADSO.Vista.Cita" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Citas</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-        .grid { margin-top: 10px; }
-        input, button { padding: 8px; margin: 6px 4px; }
-    </style>
-    </head>
-<body>
-    <form id="form1" runat="server">
+<%@ Page Title="Citas" Language="C#" MasterPageFile="~/Vista/Site.Master" AutoEventWireup="true" CodeBehind="Cita.aspx.cs" Inherits="Proyecto_ADSO.Vista.Cita" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <style>
+            .grid { margin-top: 10px; }
+            input, button { padding: 8px; margin: 6px 4px; }
+        </style>
         <div>
             <h2>Agendar Cita</h2>
             <asp:TextBox ID="txtFecha" runat="server" TextMode="Date"></asp:TextBox>
@@ -40,6 +31,4 @@
             <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
             <asp:Label ID="lblCancelar" runat="server"></asp:Label>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>
