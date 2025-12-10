@@ -32,5 +32,17 @@ namespace Proyecto_ADSO.Logica
             var d = new ClCitaD();
             return d.CancelarCita(idCita, idCliente);
         }
+
+        public bool CancelarAdmin(int idCita)
+        {
+            var d = new ClCitaD();
+            return d.CancelarCitaAdmin(idCita);
+        }
+
+        public bool Actualizar(ClCita c)
+        {
+            var d = new ClCitaD();
+            return d.ActualizarCita(c);
+        }
     }
 }

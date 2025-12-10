@@ -11,6 +11,6 @@ namespace Proyecto_ADSO.Modelo
         public string servicio { get; set; }
         public string img { get; set; }
         public decimal precio { get; set; }
-        public int idCliente { get; set; }
+        public int idUsuario { get; set; }
     }
 }

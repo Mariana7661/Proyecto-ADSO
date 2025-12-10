@@ -12,25 +12,11 @@ namespace Proyecto_ADSO.Vista
         {
             if (!IsPostBack)
             {
-                var d = new ClAdminD();
-                var a = d.ObtenerAdminPrincipal();
-                if (a != null)
-                {
-                    lblAdminNombre.Text = "Nombre: " + (a.nombre ?? "");
-                    lblAdminApellido.Text = "Apellido: " + (a.apellido ?? "");
-                    lblAdminCelular.Text = "Celular: " + (a.celular ?? "");
-                    if (!string.IsNullOrWhiteSpace(a.img))
-                    {
-                        imgAdmin.ImageUrl = a.img;
-                    }
-                    if (!string.IsNullOrWhiteSpace(a.celular))
-                    {
-                        var digits = new string((a.celular ?? "").Where(char.IsDigit).ToArray());
-                        if (digits.StartsWith("3")) digits = "57" + digits;
-                        lnkContactar.NavigateUrl = "https://wa.me/" + digits + "?text=Hola%20Fashion%20Colors";
-                        lnkContactar.Visible = true;
-                    }
-                }
+                lblAdminNombre.Text = "Nombre: Claudia";
+                lblAdminApellido.Text = "Apellido: Garcia";
+                lblAdminCelular.Text = "Celular: 3134561272";
+                lnkContactar.NavigateUrl = "https://wa.me/573134561272?text=Hola%20Fashion%20Colors";
+                lnkContactar.Visible = true;
             }
         }
     }

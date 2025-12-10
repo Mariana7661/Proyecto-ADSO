@@ -9,7 +9,7 @@ namespace Proyecto_ADSO.Logica
 {
     public class ClClienteL
     {
-        public int MtRegistrarCliente(ClCliente c)
+        public int MtRegistrarCliente(ClUsuario c)
         {
             var d = new ClClienteD();
             return d.MtRegistrarCliente(c);
@@ -27,13 +27,13 @@ namespace Proyecto_ADSO.Logica
             return d.MtVerificarLogin(correo, clave);
         }
 
-        public ClCliente ObtenerPorEmail(string email)
+        public ClUsuario ObtenerPorEmail(string email)
         {
             var d = new ClClienteD();
             return d.ObtenerPorEmail(email);
         }
 
-        public bool ActualizarDatosPersonales(ClCliente c)
+        public bool ActualizarDatosPersonales(ClUsuario c)
         {
             var d = new ClClienteD();
             return d.ActualizarDatosPersonales(c);

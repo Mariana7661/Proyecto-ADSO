@@ -11,6 +11,12 @@ namespace Proyecto_ADSO.Vista
         {
             if (!IsPostBack)
             {
+                var rol = Session["Rol"] as string;
+                if (rol != "Administrador")
+                {
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
                 CargarLista();
             }
         }
@@ -30,7 +36,7 @@ namespace Proyecto_ADSO.Vista
                 servicio = txtServicio.Text,
                 img = txtImg.Text,
                 precio = decimal.Parse(txtPrecio.Text),
-                idCliente = int.Parse(txtIdCliente.Text)
+                idUsuario = 0
             };
             var id = d.CrearServicio(s);
             lblCrear.Text = id > 0 ? "Creado ID: " + id : "No se pudo crear";
@@ -44,10 +50,7 @@ namespace Proyecto_ADSO.Vista
 
         protected void btnObtener_Click(object sender, EventArgs e)
         {
-            var d = new ClServicioD();
-            var s = d.ObtenerServicioPorId(int.Parse(txtIdServicioGet.Text));
-            gvServicio.DataSource = s != null ? new List<ClServicio> { s } : null;
-            gvServicio.DataBind();
+            
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace Proyecto_ADSO.Vista
                 servicio = txtServicioUp.Text,
                 img = txtImgUp.Text,
                 precio = decimal.Parse(txtPrecioUp.Text),
-                idCliente = int.Parse(txtIdClienteUp.Text)
+                idUsuario = 0
             };
             var ok = d.ActualizarServicio(s);
             lblActualizar.Text = ok ? "Actualizado" : "No se pudo actualizar";
@@ -69,16 +72,14 @@ namespace Proyecto_ADSO.Vista
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             var d = new ClServicioD();
-            var ok = d.EliminarServicio(int.Parse(txtIdServicioDel.Text));
+            var ok = d.EliminarServicioPorNombre(txtNombreServicioDel.Text);
             lblEliminar.Text = ok ? "Eliminado" : "No se pudo eliminar";
             CargarLista();
         }
 
         protected void btnBuscarServicio_Click(object sender, EventArgs e)
         {
-            var d = new ClServicioD();
-            gvBusquedaServicios.DataSource = d.BuscarServiciosPorNombre(txtBuscarServicio.Text);
-            gvBusquedaServicios.DataBind();
+            
         }
 
         protected void gvServicios_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
@@ -89,10 +90,7 @@ namespace Proyecto_ADSO.Vista
 
         protected void gvBusquedaServicios_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
         {
-            gvBusquedaServicios.PageIndex = e.NewPageIndex;
-            var d = new ClServicioD();
-            gvBusquedaServicios.DataSource = d.BuscarServiciosPorNombre(txtBuscarServicio.Text);
-            gvBusquedaServicios.DataBind();
+            
         }
     }
 }

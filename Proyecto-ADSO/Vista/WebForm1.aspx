@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Proyecto_ADSO.Vista.WebForm1" %>
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Proyecto_ADSO.Vista.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -30,8 +30,8 @@
                 <a href="#acerca">Acerca de nosotros</a>
                 <a href="#contactos">Contactos</a>
                 <a href="CatalogoProductos.aspx">Productos</a>
-                <a href="LoginCliente.aspx">Citas</a>
-                <a href="LoginCliente.aspx">Iniciar sesión</a>
+                <a href="Login.aspx">Citas</a>
+                <a href="Login.aspx">Iniciar sesión</a>
             </div>
         </div>
 
@@ -51,12 +51,12 @@
             </div>
 
             <div class="card">
-                <asp:Image ID="imgAdmin" runat="server" ImageUrl="img/Peluquera.png" AlternateText="Peluquera" />
+                <asp:Image ID="imgAdmin" runat="server" ImageUrl="img/Peluquera.png" AlternateText="Estilista" />
                 <div>
-                    <h3>Administradora - Peluquera</h3>
-                    <p><asp:Label ID="lblAdminNombre" runat="server" Text="Nombre:" /></p>
-                    <p><asp:Label ID="lblAdminApellido" runat="server" Text="Apellido:" /></p>
-                    <p><asp:Label ID="lblAdminCelular" runat="server" Text="Celular:" /></p>
+                    <h3>Estilista</h3>
+                    <p><asp:Label ID="lblAdminNombre" runat="server" Text="Nombre: Claudia" /></p>
+                    <p><asp:Label ID="lblAdminApellido" runat="server" Text="Apellido: Garcia" /></p>
+                    <p><asp:Label ID="lblAdminCelular" runat="server" Text="Celular: 3134561272" /></p>
                     <p>Experta en colorimetría y estilismo. Atención personalizada para cada cliente.</p>
                     <asp:HyperLink ID="lnkContactar" runat="server" CssClass="btn" Text="Contactar por WhatsApp" Target="_blank" />
                 </div>
@@ -66,9 +66,9 @@
                 <h2>Contactos</h2>
                 <div class="card">
                     <div>
-                        <p>Teléfono: 300 000 0000</p>
-                        <p>Correo: contacto@fashioncolors.com</p>
-                        <p>Dirección: Calle 123 # 45-67</p>
+                        <p>Teléfono: 3134561272</p>
+                        <p>Correo: fashionColors@gmail.com</p>
+                        
                         <p>Horario: Lunes a Sábado, 9:00 am - 7:00 pm</p>
                     </div>
                 </div>

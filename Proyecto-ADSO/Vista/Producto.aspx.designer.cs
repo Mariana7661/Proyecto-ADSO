@@ -14,6 +14,8 @@ namespace Proyecto_ADSO.Vista
         protected global::System.Web.UI.WebControls.Label Label2;
 
         protected global::System.Web.UI.WebControls.TextBox txtImg;
+        protected global::System.Web.UI.WebControls.Label LabelDesc;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         protected global::System.Web.UI.WebControls.Label Label3;
 
@@ -21,7 +23,7 @@ namespace Proyecto_ADSO.Vista
 
         protected global::System.Web.UI.WebControls.Label Label4;
 
-        protected global::System.Web.UI.WebControls.TextBox txtIdCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtIdUsuario;
 
         protected global::System.Web.UI.WebControls.Button btnCrear;
 
@@ -42,10 +44,11 @@ namespace Proyecto_ADSO.Vista
         protected global::System.Web.UI.WebControls.TextBox txtNombreUp;
 
         protected global::System.Web.UI.WebControls.TextBox txtImgUp;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcionUp;
 
         protected global::System.Web.UI.WebControls.TextBox txtPrecioUp;
 
-        protected global::System.Web.UI.WebControls.TextBox txtIdClienteUp;
+        protected global::System.Web.UI.WebControls.TextBox txtIdUsuarioUp;
 
         protected global::System.Web.UI.WebControls.Button btnActualizar;
 

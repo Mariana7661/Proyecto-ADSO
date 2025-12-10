@@ -9,7 +9,13 @@
         body { margin:0; font-family: Arial, sans-serif; background: #fdeef5; }
         .navbar { display:flex; justify-content:space-between; align-items:center; padding:12px 20px; background:#111; color:#fff; position:sticky; top:0; }
         .navbar a { color:#fff; text-decoration:none; margin:0 10px; }
+        .dropdown { position: relative; display:inline-block; }
+        .dropdown > a { cursor:pointer; }
+        .dropdown-menu { display:none; position:absolute; right:0; background:#222; min-width:180px; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+        .dropdown-menu a { display:block; padding:8px 12px; margin:0; }
+        .dropdown:hover .dropdown-menu { display:block; }
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .cart-fixed { position: fixed; right: 16px; top: 16px; background:#e91e63; color:#fff; padding:8px 12px; border-radius:20px; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,.2); }
     </style>
 </head>
 <body>
@@ -17,16 +23,26 @@
         <div class="navbar">
             <div><strong>Fashion Colors</strong></div>
             <div>
-                <a href="WebForm1.aspx#acerca">Acerca de nosotros</a>
-                <a href="WebForm1.aspx#contactos">Contactos</a>
-                <a href="CatalogoProductos.aspx">Productos</a>
-                <a href="LoginCliente.aspx">Citas</a>
-                <a href="LoginCliente.aspx">Iniciar sesión</a>
+                <asp:HyperLink ID="lnkAcerca" runat="server" NavigateUrl="WebForm1.aspx#acerca" CssClass="nav-link">Acerca de nosotros</asp:HyperLink>
+                <asp:HyperLink ID="lnkContactos" runat="server" NavigateUrl="WebForm1.aspx#contactos" CssClass="nav-link">Contactos</asp:HyperLink>
+                <asp:HyperLink ID="lnkCatalogo" runat="server" NavigateUrl="CatalogoProductos.aspx" CssClass="nav-link">Productos</asp:HyperLink>
+                <asp:HyperLink ID="lnkCitas" runat="server" NavigateUrl="Cita.aspx" CssClass="nav-link">Citas</asp:HyperLink>
+                <asp:Panel ID="pnlAdminMenu" runat="server" Visible="false" CssClass="dropdown">
+                    <a class="nav-link">Administración</a>
+                    <div class="dropdown-menu">
+                        <asp:HyperLink ID="lnkAdminProductos" runat="server" NavigateUrl="Producto.aspx" CssClass="nav-link">Productos</asp:HyperLink>
+                        <asp:HyperLink ID="lnkAdminServicios" runat="server" NavigateUrl="Servicio.aspx" CssClass="nav-link">Servicios</asp:HyperLink>
+                        <asp:HyperLink ID="lnkAdminUsuarios" runat="server" NavigateUrl="AdminUsuarios.aspx" CssClass="nav-link">Administradores</asp:HyperLink>
+                    </div>
+                </asp:Panel>
+                <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="Login.aspx" CssClass="nav-link">Iniciar sesi&oacute;n</asp:HyperLink>
+                <asp:LinkButton ID="btnLogout" runat="server" CssClass="nav-link" OnClick="btnLogout_Click">Cerrar sesi&oacute;n</asp:LinkButton>
             </div>
         </div>
         <div class="container">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
+        
     </form>
 </body>
 </html>

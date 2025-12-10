@@ -1,10 +1,10 @@
 //------------------------------------------------------------------------------
-// <generado automáticamente>
-//     Este código fue generado por una herramienta.
+// <generado automï¿½ticamente>
+//     Este cï¿½digo fue generado por una herramienta.
 //
-//     Los cambios en este archivo podrían causar un comportamiento incorrecto y se perderán si
-//     se vuelve a generar el código. 
-// </generado automáticamente>
+//     Los cambios en este archivo podrï¿½an causar un comportamiento incorrecto y se perderï¿½n si
+//     se vuelve a generar el cï¿½digo. 
+// </generado automï¿½ticamente>
 //------------------------------------------------------------------------------
 
 namespace Proyecto_ADSO.Vista
@@ -15,20 +15,11 @@ namespace Proyecto_ADSO.Vista
     {
 
         /// <summary>
-        /// Control lblCarrito.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCarrito;
-
-        /// <summary>
         /// Control rpCatalogo.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Campo generado automÃ¡ticamente.
+        /// Para modificarlo, mueva la declaraciÃ³n del campo del archivo del diseÃ±ador al archivo de cÃ³digo subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rpCatalogo;
 
@@ -36,8 +27,8 @@ namespace Proyecto_ADSO.Vista
         /// Control lblMsg.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Campo generado automÃ¡ticamente.
+        /// Para modificarlo, mueva la declaraciÃ³n del campo del archivo del diseÃ±ador al archivo de cÃ³digo subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMsg;
     }

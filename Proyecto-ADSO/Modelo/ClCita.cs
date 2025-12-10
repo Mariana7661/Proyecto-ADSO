@@ -10,7 +10,8 @@ namespace Proyecto_ADSO.Modelo
         public int idCita { get; set; }
         public DateTime fecha{ get; set; }
         public TimeSpan hora  { get; set; }
-        public int idCliente { get; set; }
+        public int idUsuario { get; set; }
+        public int idServicio { get; set; }
 
     }
 }

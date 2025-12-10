@@ -11,6 +11,12 @@ namespace Proyecto_ADSO.Vista
         {
             if (!IsPostBack)
             {
+                var rol = Session["Rol"] as string;
+                if (rol != "Administrador")
+                {
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
                 CargarLista();
             }
         }
@@ -22,6 +28,11 @@ namespace Proyecto_ADSO.Vista
             gvProductos.DataBind();
         }
 
+        protected void btnListar_Click(object sender, EventArgs e)
+        {
+            CargarLista();
+        }
+
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             var d = new ClProductoD();
@@ -29,17 +40,14 @@ namespace Proyecto_ADSO.Vista
             {
                 nombre = txtNombre.Text,
                 img = txtImg.Text,
+                descripcion = txtDescripcion.Text,
                 precio = decimal.Parse(txtPrecio.Text),
-                idCliente = int.Parse(txtIdCliente.Text)
+                idUsuario = 0
             };
             var id = d.CrearProducto(p);
             lblCrear.Text = id > 0 ? "Creado ID: " + id : "No se pudo crear";
-            CargarLista();
-        }
-
-        protected void btnListar_Click(object sender, EventArgs e)
-        {
-            CargarLista();
+            gvProductos.DataSource = d.ListarProductos();
+            gvProductos.DataBind();
         }
 
         protected void btnObtener_Click(object sender, EventArgs e)
@@ -58,12 +66,14 @@ namespace Proyecto_ADSO.Vista
                 idProducto = int.Parse(txtIdProductoUp.Text),
                 nombre = txtNombreUp.Text,
                 img = txtImgUp.Text,
+                descripcion = txtDescripcionUp.Text,
                 precio = decimal.Parse(txtPrecioUp.Text),
-                idCliente = int.Parse(txtIdClienteUp.Text)
+                idUsuario = 0
             };
             var ok = d.ActualizarProducto(p);
             lblActualizar.Text = ok ? "Actualizado" : "No se pudo actualizar";
-            CargarLista();
+            gvProductos.DataSource = d.ListarProductos();
+            gvProductos.DataBind();
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

@@ -138,7 +138,6 @@ namespace Proyecto_ADSO.Vista
         /// Campo generado autom�ticamente.
         /// Para modificarlo, mueva la declaraci�n del campo del archivo del dise�ador al archivo de c�digo subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
         /// Control txtDireccion.
@@ -147,7 +146,6 @@ namespace Proyecto_ADSO.Vista
         /// Campo generado autom�ticamente.
         /// Para modificarlo, mueva la declaraci�n del campo del archivo del dise�ador al archivo de c�digo subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDireccion;
 
         /// <summary>
         /// Control btnRegistrar.

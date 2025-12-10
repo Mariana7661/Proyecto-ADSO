@@ -18,19 +18,25 @@ namespace Proyecto_ADSO.Vista
                 return;
             }
 
-            var cliente = new ClCliente
+            var cliente = new ClUsuario
             {
                 documento = txtDocumento.Text,
                 nombre = txtNombre.Text,
                 apellido = txtApellido.Text,
                 celular = txtCelular.Text,
                 email = txtEmail.Text,
-                clave = txtClave.Text,
-                direccion = txtDireccion.Text
+                clave = txtClave.Text
             };
-            var d = new ClClienteD();
-            var id = d.MtRegistrarCliente(cliente);
-            lblResultado.Text = id > 0 ? "Cliente registrado con ID: " + id : "No se pudo registrar";
+            var dc = new ClClienteD();
+            var id = dc.MtRegistrarCliente(cliente);
+            if (id > 0)
+            {
+                ClientScript.RegisterStartupScript(GetType(), "ok", "alert('Usuario correctamente registrado'); window.location='Login.aspx';", true);
+            }
+            else
+            {
+                lblResultado.Text = "No se pudo registrar";
+            }
         }
     }
 }

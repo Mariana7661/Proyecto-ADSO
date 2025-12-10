@@ -8,11 +8,11 @@
             <asp:Label ID="Label2" runat="server" Text="Imagen"></asp:Label>
             <asp:TextBox ID="txtImg" runat="server"></asp:TextBox>
             <br />
+            <asp:Label ID="LabelDesc" runat="server" Text="Descripción"></asp:Label>
+            <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="3"></asp:TextBox>
+            <br />
             <asp:Label ID="Label3" runat="server" Text="Precio"></asp:Label>
             <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
-            <br />
-            <asp:Label ID="Label4" runat="server" Text="Id Cliente"></asp:Label>
-            <asp:TextBox ID="txtIdCliente" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="btnCrear" runat="server" Text="Crear" OnClick="btnCrear_Click" />
             <asp:Label ID="lblCrear" runat="server"></asp:Label>
@@ -23,8 +23,9 @@
                     <asp:BoundField DataField="idProducto" HeaderText="ID" ReadOnly="True" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
                     <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
-                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                    
                 </Columns>
             </asp:GridView>
             <h3>Buscar por nombre</h3>
@@ -35,8 +36,9 @@
                     <asp:BoundField DataField="idProducto" HeaderText="ID" ReadOnly="True" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
                     <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
-                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                    
                 </Columns>
             </asp:GridView>
             <asp:Button ID="btnListar" runat="server" Text="Actualizar Lista" OnClick="btnListar_Click" />
@@ -49,8 +51,9 @@
                     <asp:BoundField DataField="idProducto" HeaderText="ID" ReadOnly="True" />
                     <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                     <asp:BoundField DataField="img" HeaderText="Imagen" />
+                    <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
                     <asp:BoundField DataField="precio" HeaderText="Precio" DataFormatString="{0:N2}" />
-                    <asp:BoundField DataField="idCliente" HeaderText="Id Cliente" />
+                    <asp:BoundField DataField="idUsuario" HeaderText="Id Usuario" />
                 </Columns>
             </asp:GridView>
             <hr />
@@ -58,8 +61,8 @@
             <asp:TextBox ID="txtIdProductoUp" runat="server" Placeholder="Id Producto"></asp:TextBox>
             <asp:TextBox ID="txtNombreUp" runat="server" Placeholder="Nombre"></asp:TextBox>
             <asp:TextBox ID="txtImgUp" runat="server" Placeholder="Imagen"></asp:TextBox>
+            <asp:TextBox ID="txtDescripcionUp" runat="server" Placeholder="Descripción" TextMode="MultiLine" Rows="3"></asp:TextBox>
             <asp:TextBox ID="txtPrecioUp" runat="server" Placeholder="Precio"></asp:TextBox>
-            <asp:TextBox ID="txtIdClienteUp" runat="server" Placeholder="Id Cliente"></asp:TextBox>
             <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
             <asp:Label ID="lblActualizar" runat="server"></asp:Label>
             <hr />
